@@ -1,6 +1,8 @@
 <script lang="ts" setup>
-const { init } = useSharedTestComposable();
-// const { init: childInit } = useSharedChildTestComposable();
+const { init } = useTestComposable();
+const { childInit } = useChildTestComposable();
+const { layerInit } = useSharedTestComposable();
+const { layerChildInit } = useSharedChildTestComposable();
 
 useHead({
   title: "Nuxt 4 + Nuxt UI Showcase",
@@ -15,7 +17,9 @@ useHead({
 
 onMounted(() => {
   init();
-  // childInit();
+  childInit();
+  layerInit();
+  layerChildInit();
 });
 </script>
 
