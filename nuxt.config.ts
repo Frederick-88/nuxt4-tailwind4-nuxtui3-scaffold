@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   },
 
   imports: {
-    dirs: ["app/store/**", "app/composables/**"],
+    dirs: ["app/store/**"],
   },
 
   // extends: ['github:Frederick-88/nuxt4-tailwind4-nuxtui3-layer-scaffold#master']
