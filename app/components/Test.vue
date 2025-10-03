@@ -1,11 +1,16 @@
 <script lang="ts" setup>
 import { sharedTestUtils } from "@shared/utilities";
+
+// note: temp, to avoid "autoimport" issue like https://github.com/vuejs/pinia/issues/3028
 import { useSharedModalStore } from "@shared/store/modal";
 
-// note: temp until supported https://github.com/vuejs/pinia/issues/3028
+// note: temp, to avoid "getActivePinia()" issue like https://github.com/vuejs/pinia/discussions/3033
+// KIV until some related PR merged https://github.com/vuejs/pinia/pull/2828 or https://github.com/vuejs/pinia/pull/3035
 const { $pinia } = useNuxtApp();
-const modalStore = useModalStore();
 const sharedModalStore = useSharedModalStore($pinia);
+
+const modalStore = useModalStore();
+// const sharedModalStore = useSharedModalStore();
 
 const colors = ["primary", "secondary"];
 
