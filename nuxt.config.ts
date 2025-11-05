@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 
   // note: temp until supported https://github.com/vuejs/pinia/issues/3028
   pinia: {
-    storesDirs: ["app/store/**", "../test-nuxt4-app-layer-ui/app/store/**"],
+    storesDirs: ["app/store/**"],
     // storesDirs: ["app/store/**"],
   },
 

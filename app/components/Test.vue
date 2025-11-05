@@ -2,15 +2,15 @@
 import { sharedTestUtils } from "@shared/utilities";
 
 // note: temp, to avoid "autoimport" issue like https://github.com/vuejs/pinia/issues/3028
-import { useSharedModalStore } from "@shared/store/modal";
+// import { useSharedModalStore } from "@shared/store/modal";
 
 // note: temp, to avoid "getActivePinia()" issue like https://github.com/vuejs/pinia/discussions/3033
 // KIV until some related PR merged https://github.com/vuejs/pinia/pull/2828 or https://github.com/vuejs/pinia/pull/3035
-const { $pinia } = useNuxtApp();
-const sharedModalStore = useSharedModalStore($pinia);
+// const { $pinia } = useNuxtApp();
+// const sharedModalStore = useSharedModalStore($pinia);
 
 const modalStore = useModalStore();
-// const sharedModalStore = useSharedModalStore();
+const sharedModalStore = useSharedModalStore();
 
 const colors = ["primary", "secondary"];
 
@@ -60,6 +60,43 @@ const items = ref([
 
 const value = ref("todo");
 
+const groups = ref([
+  {
+    id: "users",
+    label: "Users",
+  },
+  {
+    id: "users2",
+    label: "Users2",
+  },
+  {
+    id: "users3",
+    label: "Users3",
+  },
+  {
+    id: "users4",
+    label: "Users4",
+  },
+  {
+    id: "users5",
+    label: "Users5",
+  },
+  {
+    id: "users6",
+    label: "Users6",
+  },
+  {
+    id: "users7",
+    label: "Users7",
+  },
+  {
+    id: "users8",
+    label: "Users8",
+  },
+]);
+
+const commandPaletteValue = ref([]);
+
 onMounted(() => {
   console.log("Consuming Repo mounted");
   modalStore.openModal("testModal");
@@ -80,12 +117,12 @@ const handleSubmit = async () => {
     class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900"
   >
     <header
-      class="border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg"
+      class="relative border-b border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex items-center justify-between">
           <div>
-            <h1 class="text-3xl font-bold text-purple-400">
+            <h1 class="text-3xl font-bold text-primary-700">
               Nuxt 4 + Nuxt UI 3 + Tailwind 4
             </h1>
             <p class="mt-2 text-gray-200">
@@ -94,6 +131,32 @@ const handleSubmit = async () => {
           </div>
         </div>
       </div>
+
+      <!-- ======================================================= -->
+      <div
+        class="test-section p-4 bg-primary-500 text-white absolute top-6 right-6"
+      >
+        <h2 class="text-2xl font-bold text-injbrand-700">Test Section</h2>
+        <h2 class="text-2xl font-bold text-primary-700">Test Section</h2>
+        <h2 class="text-2xl font-bold text-success-700">Test Section</h2>
+        <h2 class="text-2xl font-bold text-secondary-700">Test Section</h2>
+        <p>This is a test section</p>
+
+        <UCommandPalette
+          multiple
+          v-model="commandPaletteValue"
+          :groups="groups"
+          class="flex-1"
+        />
+        <USelectMenu
+          v-model="value"
+          size="md"
+          value-key="id"
+          :items="items"
+          class="w-80"
+        />
+      </div>
+      <!-- ======================================================= -->
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
