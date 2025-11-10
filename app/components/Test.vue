@@ -6,11 +6,11 @@ import { sharedTestUtils } from "@shared/utilities";
 
 // note: temp, to avoid "getActivePinia()" issue like https://github.com/vuejs/pinia/discussions/3033
 // KIV until some related PR merged https://github.com/vuejs/pinia/pull/2828 or https://github.com/vuejs/pinia/pull/3035
-// const { $pinia } = useNuxtApp();
+const { $pinia } = useNuxtApp();
 // const sharedModalStore = useSharedModalStore($pinia);
 
 const modalStore = useModalStore();
-const sharedModalStore = useSharedModalStore();
+const sharedModalStore = useSharedModalStore($pinia);
 
 const colors = ["primary", "secondary"];
 

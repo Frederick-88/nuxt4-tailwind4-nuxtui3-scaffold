@@ -1,2 +1,30 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@theme static {
+  --color-success-50: #ebf0ff;
+  --color-success-100: #dbe3ff;
+  --color-success-200: #becbff;
+  --color-success-300: #97a8ff;
+  --color-success-400: #5e5eff;
+  --color-success-500: #4d4cff;
+  --color-success-600: #3420e2;
+  --color-success-700: #ff0000;
+  --color-success-800: #22233c;
+  --color-success-850: #1b1f3a;
+  --color-success-900: #161a33;
+  --color-success-950: #0c0d26;
+
+  --color-injbrand-50: #ebf0ff;
+  --color-injbrand-100: #dbe3ff;
+  --color-injbrand-200: #becbff;
+  --color-injbrand-300: #97a8ff;
+  --color-injbrand-400: #5e5eff;
+  --color-injbrand-500: #4d4cff;
+  --color-injbrand-600: #3420e2;
+  --color-injbrand-700: #ff8800;
+  --color-injbrand-800: #22233c;
+  --color-injbrand-850: #1b1f3a;
+  --color-injbrand-900: #161a33;
+  --color-injbrand-950: #0c0d26;
+}

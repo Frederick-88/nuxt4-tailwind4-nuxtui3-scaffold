@@ -27,5 +27,15 @@ onMounted(() => {
   <div>
     <Test />
     <SharedLayerTest />
+
+    <UModal>
+      <UButton label="Open Modal here" color="neutral" />
+
+      <template #content>
+        <div class="h-full">
+          <p>This is a modal body</p>
+        </div>
+      </template>
+    </UModal>
   </div>
 </template>

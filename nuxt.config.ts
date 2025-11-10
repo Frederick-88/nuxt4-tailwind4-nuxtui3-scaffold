@@ -7,15 +7,15 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-
-  // note: temp until supported https://github.com/vuejs/pinia/issues/3028
-  pinia: {
-    storesDirs: ["app/store/**"],
-    // storesDirs: ["app/store/**"],
+  ui: {
+    theme: {
+      colors: ["primary", "secondary", "info", "success", "warning", "error"],
+    },
   },
 
-  imports: {
-    dirs: ["app/store/**"],
+  pinia: {
+    storesDirs: ["store/**"],
+    // storesDirs: ["app/store/**"],
   },
 
   // extends: ['github:Frederick-88/nuxt4-tailwind4-nuxtui3-layer-scaffold#master']
